@@ -1,0 +1,7 @@
+<ul class="todos">
+  <app-todo-preview
+    *ngFor="let todo of todos; let i = index"
+    [todo]="todo"
+    [i]="i"
+  ></app-todo-preview>
+</ul>
