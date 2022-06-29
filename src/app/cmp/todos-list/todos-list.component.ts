@@ -1,25 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
+
 @Component({
-  selector: 'app-todos',
+  selector: 'todos-list',
   templateUrl: './todos-list.component.html',
   styleUrls: ['./todos-list.component.scss'],
 })
 export class TodosComponent implements OnInit {
-  todos!: Todo[];
-
   constructor() {}
+  @Input() todos!: Todo[];
+  @Output() onRemove = new EventEmitter<string>();
 
-  ngOnInit(): void {
-    this.todos = [
-      {
-        content: 'first todo',
-        completed: false,
-      },
-      {
-        content: 'second todo',
-        completed: true,
-      },
-    ];
-  }
+  ngOnInit(): void {}
 }

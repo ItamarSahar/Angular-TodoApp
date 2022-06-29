@@ -1,0 +1,11 @@
+<!-- TODO: Add some styling to the app ! -->
+<section class="todo-app">
+  <header>
+    <h1>Todo List</h1>
+  </header>
+  <input type="text" placeholder="Enter Todo !" />
+  <todos-list
+    (onRemove)="onRemoveTodo($event)"
+    [todos]="(todos$ | async)!"
+  ></todos-list>
+</section>

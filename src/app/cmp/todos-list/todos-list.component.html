@@ -3,5 +3,6 @@
     *ngFor="let todo of todos; let i = index"
     [todo]="todo"
     [i]="i"
+    (onRemove)="onRemove.emit(todo._id)"
   ></app-todo-preview>
 </ul>

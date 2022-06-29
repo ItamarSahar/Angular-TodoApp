@@ -1,5 +1,5 @@
-<li class="todo" [style]="todoStyle">
+<li [style]="todoStyle" class="todo {{ todo.completed ? 'done' : '' }}">
   <div class="id">{{ i }}</div>
-  <div class="content">{{ todo.content }}</div>
-  <button class="delete">Remove</button>
+  <div (click)="toggleDone()" class="content">{{ todo.content }}</div>
+  <button (click)="onRemoveTodo()" class="delete">Remove</button>
 </li>
